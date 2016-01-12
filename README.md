@@ -1,2 +1,10 @@
 # gatys
-Theme for gitlist, wiht Bootatrap 4, Saas and Angular Js
+Theme for [gitlist]( http://gitlist.org ), wiht Bootatrap 4, Saas and Angular Js.
+
+
+# Requierements
+    * gitList 
+
+# Install
+Copy files in **themes**
+Set **theme** in **config.ini**  
