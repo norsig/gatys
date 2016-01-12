@@ -1,0 +1,17 @@
+<div class="dropdown pull-left m-r-1">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown-branch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        browsing: <strong>{{ branch }}</strong> <span class="caret"></span>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        {% for item in branches %}
+            <a class="dropdown-item" href="{{ path('branch', {repo: repo, branch: item}) }}">{{ item }}</a>
+        {% endfor %}
+        {% if tags %}
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Tags</h6>
+            {% for item in tags %}
+                <a class="dropdown-item" href="{{ path('branch', {repo: repo, branch: item}) }}">{{ item }}</a>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+    <a class="nav-link {% if page == 'files' %} active{% endif %}"
+            href="{{ path('branch', {repo: repo, branch: branch}) }}">
+        Files
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link{% if page in ['commits', 'searchcommits'] %} active{% endif %}"
+           href="{{ path('commits', {repo: repo, commitishPath: branch}) }}">
+            Commits
+        </a>
+    </li>
+    <li class="nav-item" >
+        <a class="nav-link {% if page == 'stats' %} active{% endif %}"
+                href="{{ path('stats', {repo: repo, branch: branch}) }}">Stats</a>
+    </li>
+    <li class="nav-item" >
+        <a class="nav-link {% if page == 'network' %} active{% endif %}"
+                href="{{ path('network', {repo: repo, branch: branch}) }}">Network</a>
+    </li>
+</ul>

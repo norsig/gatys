@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}/themes/{{ app.theme }}/css/style.css">
+        <link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}/themes/{{ app.theme }}/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}/themes/{{ app.theme }}/lib/tether/dist/css/tether.css">
+        <link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}/themes/{{ app.theme }}/lib/tether/dist/css/tether-theme-basic.css">
+        <link rel="shortcut icon" type="image/png" href="{{ app.request.basepath }}/themes/{{ app.theme }}/img/favicon.png" />
+        <!--[if lt IE 9]>
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/js/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        {% block body %}{% endblock %}
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/lib/angularjs/angular-1.5.0-rc.0.min.js"></script>
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/lib/clipboard.js/clipboard.js"></script>
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/lib/angularjs/modules/ngclipboard/ngclipboard.js"></script>
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/lib/js/jquery-2.1.4.js"></script>
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/lib/tether/dist/js/tether.min.js"></script>
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/lib/js/raphael.js"></script>
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/lib/bootstrap/js/bootstrap.js"></script>
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/lib/js/codemirror.js"></script>
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/lib/js/showdown.js"></script>
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/lib/js/table.js"></script>
+
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/js/main.js"></script>
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/lib/js/networkGraph.js"></script>
+
+        {% block extrajs %}{% endblock %}
+
+        <script src="{{ app.request.basepath }}/themes/{{ app.theme }}/js/index.js"></script>
+
+    </body>
+</html>

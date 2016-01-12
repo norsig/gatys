@@ -1,0 +1,35 @@
+.main-content{
+  margin-top: 90px;
+}
+
+span.rss-icon {
+  color: $brand-danger;
+  font-size: $font-size-large;
+
+  &:hover {
+    color: darken($brand-danger, 15%);
+  }
+}
+
+.breadcrumb {
+  margin-bottom:0;
+ border-radius: 0;
+}
+
+.search-repo{
+  width: 100%;
+  line-height: 1.5em;
+  margin: 20px 0;
+  font-size: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+    -webkit-appearance: textfield;
+}
+
+.ngclipboard{
+  cursor: pointer;
+  &:hover , &:focus{
+  text-decoration:none;
+
+}
+}

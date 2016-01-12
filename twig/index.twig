@@ -1,0 +1,57 @@
+{% extends 'layout.twig' %}
+{% block title %}GitList{% endblock %}
+
+{% block body %}
+    {% include 'navigation.twig' %}
+
+    <div class="container main-content" ng-app="repoSearch" ng-controller="RepoSearchController">
+
+        <input class="form-control search-repo" type="search" placeholder="Buscar en {{ repositories | length }} repositorios..." autofocus="" ng-model="searchString">
+
+        <div class="list-group">
+                <div class="list-group-item" ng-repeat="i in items | filter:searchString">
+                            <h4 class="{[{ i.url_repo }]}">
+                            <a class="text-danger" href="{[{ i.url_repo }]}">{[{ i.name }]}</a>
+                            <a href="{[{ i.url_rss }]}">
+                                <span class="fa fa-rss rss-icon pull-right"></span></a>
+                            </h4>
+                            <p>
+                                {[{ i.description }]}
+                            </p>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="rep-{[{ i.name }]}"
+                                   value="git@172.22.0.26:git/{[{ i.name }]}.git" readonly>
+                                <a class="input-group-addon ngclipboard" ngclipboard data-clipboard-target="#rep-{[{ i.name }]}">
+                                    <i class="fa fa-clipboard fa-lg"></i> Copiar
+                                </a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+
+        <hr/>
+        {% include 'footer.twig' %}
+    </div>
+{% endblock %}
+
+
+{% block extrajs %}
+    <script>
+        function RepoSearchController($scope){
+            //description: '{% if repository.description %}{{ repository.description }}{% endif %}'
+            $scope.items = [
+                {% for repository in repositories %}
+                {
+                    name: '{{ repository.name }}',
+                    url_repo: '{{ path('repository', {repo: repository.name}) }}',
+                    url_rss: '{{ path('rss', {repo: repository.name, branch: 'master'}) }}',
+                    description: '{{ repository.description | e('js') }}'
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+            ];
+        }
+    </script>
+{% endblock %}
