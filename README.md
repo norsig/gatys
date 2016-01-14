@@ -10,4 +10,4 @@ Copy files in **themes**
 Set **theme** in **config.ini**  
 
 # Screen
-!(https://raw.githubusercontent.com/ruby232/gatys/master/screen/gitlist-home-search.png)
+![](https://raw.githubusercontent.com/ruby232/gatys/master/screen/gitlist-home-search.png)
