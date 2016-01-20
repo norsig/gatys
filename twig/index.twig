@@ -21,9 +21,9 @@
 
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="rep-{[{ i.name }]}"
-                                   value="git@172.22.0.26:git/{[{ i.name }]}.git" readonly>
-                                <a class="input-group-addon ngclipboard" ngclipboard data-clipboard-target="#rep-{[{ i.name }]}">
+                            <input type="text" class="form-control" id="rep-{[{ i.id }]}"
+                                   value="git@gitd7.datys.cu:{[{ i.name }]}" readonly>
+                                <a class="input-group-addon ngclipboard" ngclipboard data-clipboard-target="#rep-{[{ i.id }]}">
                                     <i class="fa fa-clipboard fa-lg"></i> Copiar
                                 </a>
                         </div>
@@ -46,6 +46,7 @@
                 {% for repository in repositories %}
                 {
                     name: '{{ repository.name }}',
+                    id: '{{ repository.name | replace({'.': '-', '#': '-'}) }}',
                     url_repo: '{{ path('repository', {repo: repository.name}) }}',
                     url_rss: '{{ path('rss', {repo: repository.name, branch: 'master'}) }}',
                     description: '{{ repository.description | e('js') }}'
